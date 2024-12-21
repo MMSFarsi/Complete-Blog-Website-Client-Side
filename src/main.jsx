@@ -15,6 +15,7 @@ import Wishlist from './pages/Wishlist.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
+import BlogDetails from './pages/BlogDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:'/all-blog',
         element:<AllBlog></AllBlog>
+      },
+      {
+        path: '/blog/:id',
+        element: <BlogDetails></BlogDetails>
       },
       {
         path:'/features-blog',
