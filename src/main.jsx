@@ -12,6 +12,9 @@ import AllBlog from './pages/AllBlog.jsx';
 import FeaturedBlogs from './pages/FeaturedBlogs.jsx';
 import AddBlog from './pages/AddBlog.jsx';
 import Wishlist from './pages/Wishlist.jsx';
+import Login from './pages/Login.jsx';
+import SignUp from './pages/SignUp.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,14 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
+      },
+      {
+        path:'/sign-up',
+        element:<SignUp></SignUp>
       },
       {
         path:'/all-blog',
@@ -44,6 +55,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider> <RouterProvider router={router} /></AuthProvider>
   </StrictMode>,
 )
