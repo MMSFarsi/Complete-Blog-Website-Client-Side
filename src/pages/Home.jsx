@@ -1,10 +1,12 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+
+import Newsletter from '../components/Newsletter'
+import RecentBlog from '../components/RecentBlog'
 
 const Home = () => {
   return (
     <div>
-        
+        <RecentBlog></RecentBlog>
+        <Newsletter></Newsletter>
        
     </div>
   )
