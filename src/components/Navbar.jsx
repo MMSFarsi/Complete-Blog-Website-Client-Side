@@ -36,6 +36,7 @@ const Navbar = () => {
                 <img
                   src={user.photoURL || 'https://via.placeholder.com/40'}
                   alt="User Avatar"
+                  referrerPolicy='no-referrer'
                   className="lg:w-10 lg:h-10 w-6 h-6 rounded-full my-anchor-element"
                 />
                 

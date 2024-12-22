@@ -18,10 +18,7 @@ const AllBlog = () => {
     }
   };
 
-  const handleAddToWishlist = (blog) => {
-    console.log('Added to wishlist:', blog);
 
-  };
 
  
 
