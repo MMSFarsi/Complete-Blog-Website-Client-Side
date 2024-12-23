@@ -17,6 +17,7 @@ import SignUp from './pages/SignUp.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import BlogDetails from './pages/BlogDetails.jsx';
 import PrivateRoute from './PrivateRoutes/PrivateRoute.jsx';
+import UpdateBlog from './pages/UpdateBlog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,8 +41,13 @@ const router = createBrowserRouter([
         element:<AllBlog></AllBlog>
       },
       {
+        path:'/updateBlog/:id',
+        element:<PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:4000/blog/${params.id}`)
+      },
+      {
         path: '/blog/:id',
-        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>
+        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
       },
       {
         path:'/features-blog',

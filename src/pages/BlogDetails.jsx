@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../provider/AuthProvider';
 
@@ -56,11 +56,7 @@ const BlogDetails = () => {
     }
   };
 
-  const handleUpdate = () => {
-    navigate(`/update-blog/${id}`);
-  };
-  console.log(user.email );
-  console.log(blog.postAuther );
+
 
 
   return (
@@ -88,7 +84,7 @@ const BlogDetails = () => {
           </div>
         
             {
-              blog.postAuther===user?.email ?  <><button onClick={handleUpdate} className="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Update Blog</button></>:
+              blog.postAuther===user?.email ?  <><Link to={`/updateBlog/${blog._id}`} className="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Update Blog</Link></>:
              ''
             }
         
