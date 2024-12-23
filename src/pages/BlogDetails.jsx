@@ -26,6 +26,7 @@ const BlogDetails = () => {
     }
   };
 
+
   const fetchComments = async () => {
     try {
       const { data } = await axios.get(`http://localhost:4000/comments/${id}`);
@@ -58,11 +59,16 @@ const BlogDetails = () => {
   const handleUpdate = () => {
     navigate(`/update-blog/${id}`);
   };
+  console.log(user.email );
+  console.log(blog.postAuther );
 
 
   return (
     <div className="max-w-screen-lg mx-auto p-6">
-
+           <h1 className="text-3xl font-bold mb-4 text-gray-800">{blog.title}</h1>
+           <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            {blog.shortDescription}
+          </p>
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
         <img
           src={blog.image}
@@ -70,9 +76,10 @@ const BlogDetails = () => {
           className="w-full h-64 object-cover"
         />
         <div className="p-6">
-          <h1 className="text-3xl font-bold mb-4 text-gray-800">{blog.title}</h1>
+     
+        
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            {blog.description}
+            {blog.longDescription}
           </p>
           <div className="flex items-center space-x-4">
             <span className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-md text-sm">
@@ -80,22 +87,21 @@ const BlogDetails = () => {
             </span>
           </div>
         
-            <button
-              onClick={handleUpdate}
-              className="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-            >
-              Update Blog
-            </button>
+            {
+              blog.postAuther===user?.email ?  <><button onClick={handleUpdate} className="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Update Blog</button></>:
+             ''
+            }
         
         </div>
       </div>
 
       <div className="mt-8 bg-white shadow-lg rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4">Comments</h2>
-      
-          <p className="text-gray-600">You cannot comment on your own blog.</p>
- 
-          <form onSubmit={handleCommentSubmit} className="mb-6">
+
+
+        {
+          blog.postAuther===user?.email?  <p className="text-gray-600">You cannot comment on your own blog.</p>:<>
+            <form onSubmit={handleCommentSubmit} className="mb-6">
             <textarea
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
@@ -110,6 +116,12 @@ const BlogDetails = () => {
               Submit Comment
             </button>
           </form>
+          </>
+        }
+      
+         
+ 
+        
        
 
         <div>

@@ -16,6 +16,7 @@ import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
 import BlogDetails from './pages/BlogDetails.jsx';
+import PrivateRoute from './PrivateRoutes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog/:id',
-        element: <BlogDetails></BlogDetails>
+        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>
       },
       {
         path:'/features-blog',
@@ -48,11 +49,11 @@ const router = createBrowserRouter([
       },
       {
         path:'/add-blog',
-        element:<AddBlog></AddBlog>
+        element:<PrivateRoute><AddBlog></AddBlog></PrivateRoute>
       },
       {
         path:'/wishlist',
-        element:<Wishlist></Wishlist>
+        element:<PrivateRoute><Wishlist></Wishlist></PrivateRoute>
       },
     ]
   },

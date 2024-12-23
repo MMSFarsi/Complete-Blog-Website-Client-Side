@@ -11,10 +11,11 @@ const AddBlog = () => {
     const form=e.target
     const title=form.title.value
     const image=form.image.value
-    const description=form.description.value
+    const shortDescription=form.shortDescription.value
+    const longDescription=form.longDescription.value
     const category=form.category.value
     const postAuther=user?.email
-    const postData={title,image,description,category,postAuther}
+    const postData={title,image,shortDescription,longDescription,category,postAuther}
     console.table(postData);
     try{
       await axios.post('http://localhost:4000/blogs',postData)
@@ -72,7 +73,21 @@ const AddBlog = () => {
           </label>
           <textarea
             id="description"
-            name="description"
+            name="shortDescription"
+          
+            rows="4"
+            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Enter a short description"
+            required
+          ></textarea>
+        </div>
+        <div>
+          <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+            Long Description
+          </label>
+          <textarea
+            id="description"
+            name="longDescription"
           
             rows="4"
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
@@ -97,7 +112,7 @@ const AddBlog = () => {
             </option>
             <option value="Technology">Technology</option>
             <option value="Lifestyle">Lifestyle</option>
-            <option value="Business">Business</option>
+            <option value="Business">Science</option>
             <option value="Education">Education</option>
           </select>
         </div>
