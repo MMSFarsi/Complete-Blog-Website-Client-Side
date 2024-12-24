@@ -11,7 +11,7 @@ const FeaturedBlogs = () => {
   const fetchBlogs = async () => {
     try {
       const { data } = await axios.get("http://localhost:4000/blogs");
-      const sortedBlogs = data.map((blog) => ({...blog,wordCount: blog.description.split(" ").length, })).sort((a, b) => b.wordCount - a.wordCount).slice(0, 10);
+      const sortedBlogs = data.map((blog) => ({...blog,wordCount: blog.longDescription.split(" ").length, })).sort((a, b) => b.wordCount - a.wordCount).slice(0, 10);
       setBlogs(sortedBlogs);
 
     } catch (error) {

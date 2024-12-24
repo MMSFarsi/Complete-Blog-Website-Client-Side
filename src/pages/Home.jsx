@@ -1,5 +1,7 @@
 
 import Banner from '../components/Banner'
+import Categories from '../components/Categories'
+import JoinWithUs from '../components/JoinWithUs'
 import Newsletter from '../components/Newsletter'
 import RecentBlog from '../components/RecentBlog'
 
@@ -9,6 +11,8 @@ const Home = () => {
       <Banner></Banner>
         <RecentBlog></RecentBlog>
         <Newsletter></Newsletter>
+        <Categories></Categories>
+        <JoinWithUs></JoinWithUs>
        
     </div>
   )
