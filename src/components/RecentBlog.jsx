@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import BlogCard from './BlogCard';
 
 const RecentBlog = () => {
@@ -19,14 +18,23 @@ const RecentBlog = () => {
   }, []);
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Recent Blogs</h2>
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-     {
-        blogs.map(blog=> <BlogCard blog={blog}></BlogCard>)
-      }
-     </div>
-  
+    <div className="bg-gray-50 py-12">
+      <div className="max-w-screen-xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8 text-gray-800 text-center">
+          Recent Blogs
+        </h2>
+        {blogs.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogs.map((blog) => (
+              <BlogCard key={blog.id} blog={blog} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-500 text-center">
+            No recent blogs available. Please check back later!
+          </p>
+        )}
+      </div>
     </div>
   );
 };

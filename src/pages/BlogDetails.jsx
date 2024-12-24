@@ -26,7 +26,6 @@ const BlogDetails = () => {
     }
   };
 
-
   const fetchComments = async () => {
     try {
       const { data } = await axios.get(`http://localhost:4000/comments/${id}`);
@@ -38,7 +37,6 @@ const BlogDetails = () => {
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
-   
 
     const commentData = {
       blogId: id,
@@ -56,76 +54,66 @@ const BlogDetails = () => {
     }
   };
 
-
-
-
   return (
     <div className="max-w-screen-lg mx-auto p-6">
-           <h1 className="text-3xl font-bold mb-4 text-gray-800">{blog.title}</h1>
-           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            {blog.shortDescription}
-          </p>
+      <h1 className="text-3xl font-bold mb-4 text-gray-800">{blog.title}</h1>
+      <p className="text-lg text-gray-600 leading-relaxed mb-6">{blog.shortDescription}</p>
+
       <div className="bg-white shadow-lg rounded-lg overflow-hidden">
         <img
           src={blog.image}
           alt={blog.title}
-          className="w-full h-64 object-cover"
+          className="w-full h-auto object-cover"
         />
-        <div className="p-6">
-     
-        
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            {blog.longDescription}
-          </p>
-          <div className="flex items-center space-x-4">
-            <span className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-md text-sm">
+
+<div className="flex items-center space-x-4">
+            <span className="inline-block mb-5 bg-blue-100 text-blue-600 px-3 py-1 rounded-md text-sm">
               Category: {blog.category}
             </span>
           </div>
-        
-            {
-              blog.postAuther===user?.email ?  <><Link to={`/updateBlog/${blog._id}`} className="mt-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Update Blog</Link></>:
-             ''
-            }
-        
+        <div className="p-6">
+          <p className="text-lg leading-relaxed mb-6">{blog.longDescription}</p>
+       
+          
+          {blog.postAuther === user?.email && (
+            <Link 
+              to={`/updateBlog/${blog._id}`} 
+              className="mt-4 px-4 py-2 mt-6 bg-green-600 text-white rounded-md hover:bg-green-700"
+            >
+              Update Blog
+            </Link>
+          )}
         </div>
       </div>
 
       <div className="mt-8 bg-white shadow-lg rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4">Comments</h2>
 
-
-        {
-          blog.postAuther===user?.email?  <p className="text-gray-600">You cannot comment on your own blog.</p>:<>
+        {blog.postAuther === user?.email ? (
+          <p className="text-gray-600">You cannot comment on your own blog.</p>
+        ) : (
+          <>
             <form onSubmit={handleCommentSubmit} className="mb-6">
-            <textarea
-              value={commentText}
-              onChange={(e) => setCommentText(e.target.value)}
-              placeholder="Write a comment..."
-              className="w-full border border-gray-300 rounded-lg p-3"
-              rows="4"
-            ></textarea>
-            <button
-              type="submit"
-              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-            >
-              Submit Comment
-            </button>
-          </form>
+              <textarea
+                value={commentText}
+                onChange={(e) => setCommentText(e.target.value)}
+                placeholder="Write a comment..."
+                className="w-full border border-gray-300 rounded-lg p-3"
+                rows="4"
+              ></textarea>
+              <button
+                type="submit"
+                className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              >
+                Submit Comment
+              </button>
+            </form>
           </>
-        }
-      
-         
- 
-        
-       
+        )}
 
         <div>
           {comments.map((comment) => (
-            <div
-              key={comment._id}
-              className="flex items-start mb-4 border-b pb-4"
-            >
+            <div key={comment._id} className="flex items-start mb-4 border-b pb-4">
               <img
                 src={comment.userPhoto}
                 alt={comment.userName}

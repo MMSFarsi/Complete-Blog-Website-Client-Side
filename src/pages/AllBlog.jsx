@@ -7,6 +7,7 @@ const AllBlog = () => {
   const [filter,setFilter]=useState('')
   const [search,setSearch]=useState('')
 
+
   useEffect(() => {
     const fetchAllBlogs = async () => {
       const { data } = await axios.get(`http://localhost:4000/all-blogs?filter=${filter}&search=${search}`);
@@ -15,10 +16,6 @@ const AllBlog = () => {
     fetchAllBlogs();
   }, [filter,search]);
 
-  // const fetchAllBlogs = async () => {
-  //     const { data } = await axios.get('http://localhost:4000/blogs');
-  //     setBlogs(data);
-  // };
 
 
 

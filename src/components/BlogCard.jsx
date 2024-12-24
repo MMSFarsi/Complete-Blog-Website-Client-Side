@@ -11,7 +11,7 @@ const BlogCard = ({ blog }) => {
     if (!user) {
       Swal.fire({
         title: 'Error',
-        text: 'You need to be logged in to add to the watchlist.',
+        text: 'You need to be logged in to add to the wishlist.',
         icon: 'error',
       });
       return;
@@ -47,30 +47,32 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <img
         src={blog.image}
         alt={blog.title}
         className="w-full h-48 object-cover"
       />
-      <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-        <p className="text-gray-600 mb-4">{blog.description}</p>
-        <span className="block text-sm text-blue-500 mb-4">
-          Category: {blog.category}
+      <div className="p-5">
+        <h3 className="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
+          {blog.title}
+        </h3>
+   
+        <span className="inline-block text-sm text-blue-500 bg-blue-50 px-2 py-1 rounded">
+          {blog.category}
         </span>
-        <div className="flex space-x-4">
+        <div className="mt-4 flex justify-between items-center">
           <Link
             to={`/blog/${blog._id}`}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
           >
             Details
           </Link>
           <button
             onClick={handleAddWishlist}
-            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
           >
-            Wishlist
+            Add to Wishlist
           </button>
         </div>
       </div>

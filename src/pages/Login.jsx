@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
+import axios from "axios";
 
 
 const Login = () => {
@@ -43,7 +44,9 @@ const Login = () => {
   };
 
   const handleGoogle = () => {
-    signWithGoogle()
+  signWithGoogle()
+    // generate token
+  
       .then((result) => {
         if(result?.user?.email){
           setUser(result.user);
