@@ -16,17 +16,18 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-gray-800 text-white shadow-lg">
+    <header className=" bg-slate-50 sticky top-0 backdrop-filter backdrop-blur-lg z-20">
       {/* Top Bar */}
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-3">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Logo"
-          />
-          <span className="text-2xl font-bold">GenIdeas</span>
-        </Link>
+      <Link to="/" className="flex items-center space-x-3">
+  <img
+    src="https://i.ibb.co.com/R39RgW7/logoimage.png"
+    className=" h-10  object-cover"
+    alt="Logo"
+  />
+
+</Link>
+
         <div className="flex items-center space-x-6">
           {user ? (
             <>
@@ -38,24 +39,33 @@ const Navbar = () => {
               />
               <button
                 onClick={handleLogOut}
-                className="px-4 py-2 bg-red-500 rounded hover:bg-red-600"
+                className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-red-500 hover:text-black transition-all duration-300"
               >
                 Logout
               </button>
             </>
           ) : (
+           <>
             <Link
               to="/login"
-              className="px-4 py-2 bg-blue-500 rounded hover:bg-blue-600"
+              className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-white/50 hover:text-black transition-all duration-300"
             >
               Login
             </Link>
+            <Link
+  to="/sign-up"
+  className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-white/50 hover:text-black transition-all duration-300"
+>
+  Register
+</Link>
+
+           </>
           )}
         </div>
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-gray-700">
+      <nav className="">
         <div className="max-w-screen-xl mx-auto px-4 py-3">
           <ul className="flex space-x-8 text-sm">
             <li>
@@ -64,7 +74,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? 'text-blue-400 font-bold underline'
-                    : 'text-white hover:text-blue-400'
+                    : 'text-black hover:text-blue-400'
                 }
               >
                 Home
@@ -76,7 +86,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? 'text-blue-400 font-bold underline'
-                    : 'text-white hover:text-blue-400'
+                    : 'text-black hover:text-blue-400'
                 }
               >
                 Add Blog
@@ -88,7 +98,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? 'text-blue-400 font-bold underline'
-                    : 'text-white hover:text-blue-400'
+                    : 'text-black hover:text-blue-400'
                 }
               >
                 All Blog
@@ -100,7 +110,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? 'text-blue-400 font-bold underline'
-                    : 'text-white hover:text-blue-400'
+                    : 'text-black hover:text-blue-400'
                 }
               >
                 Features Blog
@@ -112,7 +122,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? 'text-blue-400 font-bold underline'
-                    : 'text-white hover:text-blue-400'
+                    : 'text-black hover:text-blue-400'
                 }
               >
                 Wishlist

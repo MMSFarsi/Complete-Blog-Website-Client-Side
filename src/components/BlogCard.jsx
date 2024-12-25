@@ -64,13 +64,13 @@ const BlogCard = ({ blog }) => {
         <div className="mt-4 flex justify-between items-center">
           <Link
             to={`/blog/${blog._id}`}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            className="bg-black text-white px-6 py-2 rounded-lg hover:border hover:border-black/50 hover:bg-white hover:text-black hover:font-bold transition duration-300"
           >
             Details
           </Link>
           <button
             onClick={handleAddWishlist}
-            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+            className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-green-500 hover:text-black transition-all duration-300"
           >
             Add to Wishlist
           </button>

@@ -11,13 +11,11 @@ const Footer = () => {
               className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
             >
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="h-8"
-                alt="Flowbite Logo"
-              />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              GenIdeas 
-              </span>
+    src="https://i.ibb.co.com/R39RgW7/logoimage.png"
+    className=" h-10 w-42  object-cover"
+    alt="Logo"
+  />
+           
             </a>
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
               <li>
