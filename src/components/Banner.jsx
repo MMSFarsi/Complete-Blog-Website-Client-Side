@@ -56,7 +56,7 @@ const Banner = () => {
 
     
           <motion.button
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+            className="bg-[#484848] text-white px-6 py-2 rounded-lg "
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}

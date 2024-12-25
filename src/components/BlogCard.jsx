@@ -47,7 +47,7 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-100 hover:scale-105 hover:shadow-sm">
       <img
         src={blog.image}
         alt={blog.title}
@@ -64,13 +64,13 @@ const BlogCard = ({ blog }) => {
         <div className="mt-4 flex justify-between items-center">
           <Link
             to={`/blog/${blog._id}`}
-            className="bg-black text-white px-6 py-2 rounded-lg hover:border hover:border-black/50 hover:bg-white hover:text-black hover:font-bold transition duration-300"
+            className="bg-[#484848] text-white px-6 py-2 rounded-lg hover:border hover:border-[#484848] hover:bg-white hover:text-black  transition duration-900"
           >
             Details
           </Link>
           <button
             onClick={handleAddWishlist}
-            className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-green-500 hover:text-black transition-all duration-300"
+            className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
           >
             Add to Wishlist
           </button>

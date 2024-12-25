@@ -75,9 +75,9 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-800  min-h-screen flex items-center justify-center">
-      <div className="card w-full max-w-sm p-6 bg-white dark:bg-gray-100 shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-800  mb-6">Login</h2>
+    <div className="   min-h-screen flex items-center justify-center">
+      <div className="card w-full max-w-sm p-6 border-[#676767] border bg-white shadow-lg rounded-lg">
+        <h2 className="text-sm font-bold  text-[#676767]  mb-6">Dive into a world of fascinating stories, tips, and insights.</h2>
         <form onSubmit={handleLoginUser} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-600">Email</label>
@@ -85,7 +85,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
-              className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 mt-2 border border-[#676767] rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
               required
             />
           </div>
@@ -95,20 +95,20 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Password"
-              className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 mt-2 border border-[#676767] rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
               required
             />
           </div>
           <div>
-            <button className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500 transition">
+            <button className="w-full py-2 px-4 bg-[#484848] text-white font-semibold rounded-lg transition">
               Login
             </button>
           </div>
         </form>
         <div className="text-center mt-4">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-[#000000]">
             Don't have an account?{" "}
-            <Link to="/sign-up" className="text-indigo-500 hover:underline">
+            <Link to="/sign-up" className="underline">
               Register
             </Link>
           </p>
@@ -118,7 +118,7 @@ const Login = () => {
             onClick={handleGoogle}
             className="flex items-center justify-center w-full py-2 px-4 bg-white border rounded-lg shadow hover:shadow-lg transition gap-2"
           >
-            <FaGoogle className="text-xl text-red-500" />
+           <span><img width="25" height="25" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/></span>
             <span className="font-medium text-gray-800">Continue with Google</span>
           </button>
         </div>

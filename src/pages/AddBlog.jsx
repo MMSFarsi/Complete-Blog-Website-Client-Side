@@ -35,13 +35,13 @@ const AddBlog = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover bg-center my-6">
+    <div className="min-h-screen mx-2 lg:mx-0 flex items-center justify-center bg-cover bg-center my-6">
       <div className="bg-white/20 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-2xl border border-gray-200">
-        <h2 className="text-4xl font-extrabold text-center text-black mb-8">
+        <h2 className="text-xl lg:text-4xl font-extrabold text-center text-black mb-8">
           Add a New Blog Post
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Title Input */}
+      
           <div>
             <label
               htmlFor="title"
@@ -59,7 +59,7 @@ const AddBlog = () => {
             />
           </div>
 
-          {/* Image URL Input */}
+         
           <div>
             <label
               htmlFor="image"
@@ -77,7 +77,7 @@ const AddBlog = () => {
             />
           </div>
 
-          {/* Short Description Input */}
+      
           <div>
             <label
               htmlFor="shortDescription"
@@ -95,7 +95,7 @@ const AddBlog = () => {
             ></textarea>
           </div>
 
-          {/* Long Description Input */}
+   
           <div>
             <label
               htmlFor="longDescription"
@@ -113,7 +113,7 @@ const AddBlog = () => {
             ></textarea>
           </div>
 
-          {/* Category Selector */}
+ 
           <div>
             <label
               htmlFor="category"
@@ -137,10 +137,10 @@ const AddBlog = () => {
             </select>
           </div>
 
-          {/* Submit Button */}
+      
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white font-semibold py-3 px-4 rounded-md shadow-md hover:bg-blue-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white/20"
+            className="w-full bg-[#484848] text-white font-semibold py-3 px-4 rounded-md shadow-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-white/20"
           >
             Add Blog
           </button>

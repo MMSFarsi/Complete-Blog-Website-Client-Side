@@ -2,6 +2,7 @@
 
 import Banner from '../components/Banner'
 import Categories from '../components/Categories'
+import ContactUs from '../components/ContactUs'
 import JoinWithUs from '../components/JoinWithUs'
 import Newsletter from '../components/Newsletter'
 import RecentBlog from '../components/RecentBlog'
@@ -14,6 +15,7 @@ const Home = () => {
         <Newsletter></Newsletter>
  
         <JoinWithUs></JoinWithUs>
+        <ContactUs></ContactUs>
        
     </div>
   )

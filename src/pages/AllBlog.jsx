@@ -23,7 +23,7 @@ const AllBlog = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6">All Blogs</h2>
+      <h2 className="text-3xl font-bold mb-6 bg-[#484848] w-fit mx-auto text-white px-4 py-3">All Blogs</h2>
       <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
           <div>
             <select
@@ -51,7 +51,7 @@ const AllBlog = () => {
                 aria-label='Enter Blog Title'
               />
 
-              <button className='px- 1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
+              <button className='px- 1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#484848] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
                 Search
               </button>
             </div>
