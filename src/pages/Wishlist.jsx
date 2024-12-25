@@ -15,7 +15,7 @@ const Wishlist = () => {
       if (user?.email) {
         try {
           const { data } = await axios.get(
-            `http://localhost:4000/wishlist/${user.email}`
+            `http://localhost:4000/wishlist/${user.email}`,{withCredentials:true}
           );
           setWishlist(data);
         } catch (err) {
