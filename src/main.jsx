@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       {
         path:'/updateBlog/:id',
         element:<PrivateRoute><UpdateBlog></UpdateBlog></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:4000/blog/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-11-server-zeta-liart.vercel.app/blog/${params.id}`)
       },
       {
         path: '/blog/:id',

@@ -7,7 +7,8 @@ const Newsletter = () => {
 
   const handleSubscription = (e) => {
     e.preventDefault();
- toast.success('Thank you for subscribing to our newsletter!')
+    toast.success('Thank you for subscribing to our newsletter!')
+    e.target.reset()
   };
 
   return (
@@ -21,6 +22,7 @@ const Newsletter = () => {
       <form onSubmit={handleSubscription}className="flex flex-col md:flex-row justify-center items-center gap-4">
         <input
           type="email"
+          required
           placeholder="Enter your email address"
           
           className="w-full md:w-1/3 border border-gray-300 rounded-lg px-2 lg:px-4 py-2 focus:ring focus:ring-blue-300"

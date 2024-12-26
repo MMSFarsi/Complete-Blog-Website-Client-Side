@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast"; // Import toast
+import toast from "react-hot-toast"; 
 import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const Wishlist = () => {
@@ -65,11 +65,11 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="min-h-screen p-0 lg:p-6">
+    <div className=" p-0 lg:p-6">
       <h2 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
         Wishlist
       </h2>
-      <div className="w-full">
+      <div className="w-full p-2 lg:px-0">
         <table className="w-full bg-white border border-gray-200 rounded-lg shadow-md text-sm md:text-base">
           <thead>
             <tr className="bg-gray-200 text-gray-700">
@@ -80,7 +80,7 @@ const Wishlist = () => {
           </thead>
           <tbody>
             {wishlist.map((item) => (
-              <tr key={item._id} className="border-t border-gray-200 hover:bg-gray-50">
+              <tr key={item._id} className="border-t text-[10px] lg:text-sm border-gray-200 hover:bg-gray-50">
                 <td className="px-4 py-3 text-gray-800 font-medium">{item.title}</td>
                 <td className="px-4 py-3 text-blue-500">{item.category}</td>
                 <td className="px-4 py-3">
@@ -92,7 +92,7 @@ const Wishlist = () => {
                       Details
                     </button>
                     <button
-                      onClick={() => toastDelete(item._id)} // Trigger the toast delete confirmation
+                      onClick={() => toastDelete(item._id)} 
                       className="px-2 py-1 bg-red-600 text-white rounded-md hover:bg-red-700 transition text-xs md:text-sm"
                     >
                       Remove

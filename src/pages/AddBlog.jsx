@@ -27,7 +27,7 @@ const AddBlog = () => {
     };
 
     try {
-      await axios.post('http://localhost:4000/blogs', postData);
+      await axios.post('https://assignment-11-server-zeta-liart.vercel.app/blogs', postData);
       form.reset();
       toast.success('Post Added')
       navigate('/all-blog');

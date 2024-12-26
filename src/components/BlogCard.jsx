@@ -27,7 +27,7 @@ const BlogCard = ({ blog }) => {
     };
 
     try {
-      const data = await axios.post('http://localhost:4000/wishlist', wishlistData);
+      const data = await axios.post('https://assignment-11-server-zeta-liart.vercel.app/wishlist', wishlistData);
       if (data.data.insertedId) {
      toast.success('Added to your Wishlist successfully')
       }

@@ -19,7 +19,7 @@ const BlogDetails = () => {
 
   const fetchSingleBlog = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:4000/blog/${id}`);
+      const { data } = await axios.get(`https://assignment-11-server-zeta-liart.vercel.app/blog/${id}`);
       setBlog(data);
     } catch (error) {
       console.error('Error fetching blog:', error);
@@ -28,7 +28,7 @@ const BlogDetails = () => {
 
   const fetchComments = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:4000/comments/${id}`);
+      const { data } = await axios.get(`https://assignment-11-server-zeta-liart.vercel.app/comments/${id}`);
       setComments(data);
     } catch (error) {
       console.error('Error fetching comments:', error);
@@ -46,7 +46,7 @@ const BlogDetails = () => {
     };
 
     try {
-      await axios.post('http://localhost:4000/comments', commentData);
+      await axios.post('https://assignment-11-server-zeta-liart.vercel.app/comments', commentData);
       setCommentText('');
       fetchComments();
     } catch (error) {

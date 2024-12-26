@@ -28,7 +28,7 @@ const UpdateBlog = () => {
     };
     console.table(updatePostData);
     try {
-      await axios.put(`http://localhost:4000/blog/${data._id}`, updatePostData);
+      await axios.put(`https://assignment-11-server-zeta-liart.vercel.app/blog/${data._id}`, updatePostData);
       form.reset();
       toast.success('Post Updated')
       navigate('/all-blog');

@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        console.log('User logged out');
+        
       })
       .catch((error) => {
         console.error('Error logging out:', error);
@@ -28,18 +28,18 @@ const Navbar = () => {
 
         </Link>
 
-        <div className="flex items-center space-x-2 lg:space-x-6">
+        <div className="flex items-center space-x-3 lg:space-x-6">
           {user ? (
             <>
               <img
                 src={user.photoURL || 'https://via.placeholder.com/40'}
                 alt="User Avatar"
-                className="w-10 h-10 rounded-full border-2 border-white"
+                className="lg:w-10 lg:h-10 w-7 h-7 rounded-full border-2 border-white"
                 referrerPolicy="no-referrer"
               />
               <button
                 onClick={handleLogOut}
-                className="px-2 py-2  :px-6 lg:py-2 rounded-lg text-sm bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-red-500 hover:text-black transition-all duration-300"
+                className="px-1 py-1  :px-6 lg:py-2 rounded-lg text-[10px] lg:text-sm bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-red-500 hover:text-black transition-all duration-300"
               >
                 Logout
               </button>
@@ -48,13 +48,13 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className="px-2 py-2  :px-6 lg:py-2 text-sm rounded-lg bg-[#484848] border border-black/50 text-white font-semibold backdrop-blur-md shadow-md hover:bg-white/50 hover:text-black transition-all duration-300"
+                className="px-1 py-1  :px-6 lg:py-2 text-[10px] lg:text-sm rounded-lg bg-[#484848] border border-black/50 text-white font-semibold backdrop-blur-md shadow-md hover:bg-white/50 hover:text-black transition-all duration-300"
               >
                 Login
               </Link>
               <Link
                 to="/sign-up"
-                className="px-2 py-2  :px-6 lg:py-2 text-sm rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
+                className="px-1 py-1  :px-6 lg:py-2 text-[10px] lg:text-sm rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
               >
                 Register
               </Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Main Navigation */}
+
       <nav className="">
         <div className="max-w-screen-xl mx-auto px-4 py-3">
           <ul className="flex space-x-4 lg:space-x-8  text-[11px] lg:text-sm ">

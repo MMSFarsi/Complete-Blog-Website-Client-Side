@@ -10,7 +10,7 @@ const AllBlog = () => {
 
   useEffect(() => {
     const fetchAllBlogs = async () => {
-      const { data } = await axios.get(`http://localhost:4000/all-blogs?filter=${filter}&search=${search}`);
+      const { data } = await axios.get(`https://assignment-11-server-zeta-liart.vercel.app/all-blogs?filter=${filter}&search=${search}`);
       setBlogs(data);
   };
     fetchAllBlogs();
@@ -23,13 +23,13 @@ const AllBlog = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6 bg-[#484848] w-fit mx-auto text-white px-4 py-3">All Blogs</h2>
+      <h2 className="tex-xl lg:text-3xl font-bold mb-6 bg-[#484848] w-fit mx-auto text-white px-4 py-3">All Blogs</h2>
       <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
           <div>
             <select
               name='category'
               id='category'
-              className='border p-4 rounded-lg'
+              className='border p-2 lg:p-4 rounded-lg'
               onChange={(e)=>setFilter(e.target.value)}
             >
               <option value=''>Filter By Category</option>
@@ -43,7 +43,7 @@ const AllBlog = () => {
        
             <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
               <input
-                className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
+                className='px-1 lg:px-6 p-1 lg:py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                 type='text'
                 name='search'
                 onChange={e=>setSearch(e.target.value)}
@@ -51,7 +51,7 @@ const AllBlog = () => {
                 aria-label='Enter Blog Title'
               />
 
-              <button className='px- 1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#484848] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
+              <button className='px-1 md:px-4 py-1 lg:py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#484848] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
                 Search
               </button>
             </div>

@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
-import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
-import axios from "axios";
 import toast from "react-hot-toast";
 
 const Login = () => {
@@ -34,7 +31,7 @@ const Login = () => {
         if (result?.user?.email) {
           setUser(result.user);
           toast.success("Google Login Successful");
-          navigate("/"); 
+          navigate("/");
         }
       })
       .catch((err) => {
@@ -44,7 +41,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="card w-full max-w-sm p-6 border-[#676767] border bg-white shadow-lg rounded-lg">
+      <div className="card w-[300px] lg:w-[400px]  p-6 border-[#676767] border bg-white shadow-lg rounded-lg">
         <h2 className="text-sm font-bold text-[#676767] mb-6">
           Dive into a world of fascinating stories, tips, and insights.
         </h2>

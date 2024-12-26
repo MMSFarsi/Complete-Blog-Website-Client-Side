@@ -40,18 +40,18 @@ const AuthProvider = ({children}) => {
           if (currentUser?.email) {
             setUser(currentUser);
             try {
-              const { data } = await axios.post(`http://localhost:4000/jwt`, {
+              const { data } = await axios.post(`https://assignment-11-server-zeta-liart.vercel.app/jwt`, {
                 email: currentUser.email,
               },{withCredentials:true}
             );
-              console.log("JWT Token:", data);
+             
             } catch (error) {
               console.error("Error fetching token:", error);
             }
           } else {
-            console.log("User is logged out.");
+          
             setUser(currentUser); 
-            const { data } = await axios.get(`http://localhost:4000/logout`,{withCredentials:true}
+            const { data } = await axios.get(`https://assignment-11-server-zeta-liart.vercel.app/logout`,{withCredentials:true}
             )
 
 

@@ -13,7 +13,7 @@ const FeaturedBlogs = () => {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:4000/blogs");
+      const { data } = await axios.get("https://assignment-11-server-zeta-liart.vercel.app/blogs");
       const sortedBlogs = data
         .map((blog, index) => ({
           id: blog._id,

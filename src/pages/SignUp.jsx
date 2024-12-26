@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthProvider";
-import toast from "react-hot-toast"; // Import the toast function
+import toast from "react-hot-toast"; 
 
 const SignUp = () => {
   const { createUser, updateUserProfile, setUser, signWithGoogle } =
@@ -16,7 +15,7 @@ const SignUp = () => {
     const name = e.target.name.value;
     const photo = e.target.photo.value;
 
-    // Password validation checks
+
     if (password.length < 6) {
       toast.error("Password must be 6 characters or more.");
       return;
@@ -51,7 +50,7 @@ const SignUp = () => {
       .then((result) => {
         setUser(result.user);
         toast.success("Logged in with Google successfully!");
-        navigate("/"); // Navigate after Google login
+        navigate("/"); 
       })
       .catch(() => {
         toast.error("Failed to log in with Google. Please try again.");
@@ -60,7 +59,7 @@ const SignUp = () => {
 
   return (
     <div className="py-10 min-h-screen flex items-center justify-center">
-      <div className="card w-full max-w-sm p-6 border-[#676767] border bg-white dark:bg-gray-100 shadow-xl rounded-lg">
+      <div className="card w-[300px] lg:w-[400px]  p-6 border-[#676767] border bg-white dark:bg-gray-100 shadow-xl rounded-lg">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Create an Account
         </h2>
