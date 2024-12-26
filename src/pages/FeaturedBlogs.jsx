@@ -1,49 +1,69 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import DataTable from "react-data-table-component";
 
 const FeaturedBlogs = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchBlogs();
   }, []);
 
   const fetchBlogs = async () => {
+    setLoading(true);
     try {
       const { data } = await axios.get("http://localhost:4000/blogs");
-      const sortedBlogs = data.map((blog) => ({...blog,wordCount: blog.longDescription.split(" ").length, })).sort((a, b) => b.wordCount - a.wordCount).slice(0, 10);
+      const sortedBlogs = data
+        .map((blog, index) => ({
+          id: blog._id,
+          serialNumber: index + 1,
+          title: blog.title,
+          category: blog.category,
+        }))
+        .slice(0, 10); // Only top 10 blogs
       setBlogs(sortedBlogs);
-
     } catch (error) {
       console.error("Error fetching blogs:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
+  const columns = [
+    {
+      name: "Serial",
+      selector: (row) => row.serialNumber,
+      width: "20%",
+      center: true, 
+    },
+    {
+      name: "Title",
+      selector: (row) => row.title,
+      sortable: true, 
+      wrap: true,
+    },
+    {
+      name: "Category",
+      selector: (row) => row.category,
+      wrap: true,
+    },
+  ];
+
   return (
     <div className="max-w-screen-lg mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Featured Blogs</h1>
-
+      <h1 className="text-xl lg:text-3xl font-bold mb-8  text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">Featured Blogs</h1>
       {blogs.length > 0 ? (
-        <table className="w-full table-auto border-collapse border border-gray-300">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-300 px-4 py-2">Serial Number</th>
-              <th className="border border-gray-300 px-4 py-2">Title</th>
-              <th className="border border-gray-300 px-4 py-2">Author</th>
-              <th className="border border-gray-300 px-4 py-2">Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {blogs.map((blog, index) => (
-              <tr key={blog.id} className="text-center">
-                <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-                <td className="border border-gray-300 px-4 py-2">{blog.title}</td>
-                <td className="border border-gray-300 px-4 py-2">{blog.postAuther}</td>
-                <td className="border border-gray-300 px-4 py-2">{blog.category}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <DataTable
+        
+          columns={columns}
+          data={blogs}
+          progressPending={loading}
+          highlightOnHover
+          striped
+          responsive
+          persistTableHead
+        />
       ) : (
         <p className="text-gray-600">No blogs found.</p>
       )}
