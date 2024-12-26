@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const UpdateBlog = () => {
   const data = useLoaderData();
   const { user } = useContext(AuthContext);
+  const navigate=useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +30,8 @@ const UpdateBlog = () => {
     try {
       await axios.put(`http://localhost:4000/blog/${data._id}`, updatePostData);
       form.reset();
+      toast.success('Post Updated')
+      navigate('/all-blog');
     } catch (err) {
       console.error(err);
     }

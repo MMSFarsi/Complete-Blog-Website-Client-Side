@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const AddBlog = () => {
   const { user } = useContext(AuthContext);
@@ -28,6 +29,7 @@ const AddBlog = () => {
     try {
       await axios.post('http://localhost:4000/blogs', postData);
       form.reset();
+      toast.success('Post Added')
       navigate('/all-blog');
     } catch (err) {
       console.error(err);

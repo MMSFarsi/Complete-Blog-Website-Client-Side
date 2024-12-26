@@ -1,20 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import toast from "react-hot-toast"; // Import toast
 import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const Wishlist = () => {
   const { user } = useContext(AuthContext);
   const [wishlist, setWishlist] = useState([]);
   const navigate = useNavigate();
-  const axiosSecure=useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     function fetchWishlist() {
       if (user?.email) {
-        axiosSecure
-          .get(`/wishlist/${user?.email}`)
+        axiosSecure.get(`/wishlist/${user?.email}`)
           .then(({ data }) => setWishlist(data));
       }
     }
@@ -22,29 +21,43 @@ const Wishlist = () => {
     fetchWishlist();
   }, [user?.email]);
 
-  const handleRemoveFromWishlist = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:4000/wishlist/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your Wishlist has been deleted.", "success");
-              setWishlist((prev) => prev.filter((item) => item._id !== id));
-            }
-          });
+  const handleDelete = async (id) => {
+    try {
+      const { data } = await axiosSecure.delete(`/wishlist/${id}`);
+      if (data.deletedCount > 0) {
+        toast.success("Post removed from wishlist successfully!");
+        setWishlist((prev) => prev.filter((item) => item._id !== id));
       }
-    });
+    } catch (err) {
+      toast.error("Failed to remove wishlist. Please try again.");
+    }
+  };
+
+  const toastDelete = (id) => {
+    toast(
+      (t) => (
+        <div className="flex gap-3 items-start">
+          <div>Are You Sure?</div>
+          <div>
+            <button
+              className="bg-red-400 text-white px-3 py-1 rounded-md mr-1"
+              onClick={() => {
+                handleDelete(id);
+                toast.dismiss(t.id); 
+              }}
+            >
+              Yes
+            </button>
+            <button
+              className="bg-green-400 text-white px-3 py-1 rounded-md"
+              onClick={() => toast.dismiss(t.id)} 
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )
+    );
   };
 
   const handleViewDetails = (id) => {
@@ -52,7 +65,7 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="min-h-screen p-0 lg:p-6 ">
+    <div className="min-h-screen p-0 lg:p-6">
       <h2 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
         Wishlist
       </h2>
@@ -67,13 +80,8 @@ const Wishlist = () => {
           </thead>
           <tbody>
             {wishlist.map((item) => (
-              <tr
-                key={item._id}
-                className="border-t border-gray-200 hover:bg-gray-50"
-              >
-                <td className="px-4 py-3 text-gray-800 font-medium">
-                  {item.title}
-                </td>
+              <tr key={item._id} className="border-t border-gray-200 hover:bg-gray-50">
+                <td className="px-4 py-3 text-gray-800 font-medium">{item.title}</td>
                 <td className="px-4 py-3 text-blue-500">{item.category}</td>
                 <td className="px-4 py-3">
                   <div className="flex space-x-2">
@@ -84,7 +92,7 @@ const Wishlist = () => {
                       Details
                     </button>
                     <button
-                      onClick={() => handleRemoveFromWishlist(item._id)}
+                      onClick={() => toastDelete(item._id)} // Trigger the toast delete confirmation
                       className="px-2 py-1 bg-red-600 text-white rounded-md hover:bg-red-700 transition text-xs md:text-sm"
                     >
                       Remove

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const Newsletter = () => {
@@ -6,14 +7,7 @@ const Newsletter = () => {
 
   const handleSubscription = (e) => {
     e.preventDefault();
- 
-      Swal.fire({
-        icon: "success",
-        title: "Subscription Successful",
-        text: "Thank you for subscribing to our newsletter!",
-        timer: 2000,
-        showConfirmButton: false,
-      })
+ toast.success('Thank you for subscribing to our newsletter!')
   };
 
   return (

@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { PhotoProvider, PhotoView } from 'react-photo-view'; 
+import 'react-photo-view/dist/react-photo-view.css'; 
+import toast from 'react-hot-toast';
 
 const BlogCard = ({ blog }) => {
   const { user } = useContext(AuthContext);
 
   const handleAddWishlist = async () => {
     if (!user) {
-      Swal.fire({
-        title: 'Error',
-        text: 'You need to be logged in to add to the wishlist.',
-        icon: 'error',
-      });
+     toast.error('You need to be logged in to add to the wishlist')
       return;
     }
 
@@ -30,29 +29,23 @@ const BlogCard = ({ blog }) => {
     try {
       const data = await axios.post('http://localhost:4000/wishlist', wishlistData);
       if (data.data.insertedId) {
-        Swal.fire({
-          title: 'Success!',
-          text: 'Added to your Wishlist successfully.',
-          icon: 'success',
-        });
+     toast.success('Added to your Wishlist successfully')
       }
     } catch (error) {
       console.error('Error adding to Wishlist:', error);
-      Swal.fire({
-        title: 'Error',
-        text: 'Failed to add to the wishlist. Please try again.',
-        icon: 'error',
-      });
+    toast.error('Failed to add to the wishlist. Please try again')
     }
   };
 
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-100 hover:scale-105 hover:shadow-sm">
-      <img
-        src={blog.image}
-        alt={blog.title}
-        className="w-full h-48 object-cover"
-      />
+     
+      <PhotoProvider>
+        <PhotoView src={blog.image}>
+          <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover cursor-pointer" />
+        </PhotoView>
+      </PhotoProvider>
+
       <div className="p-5">
         <h3 className="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
           {blog.title}

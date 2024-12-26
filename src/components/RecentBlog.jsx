@@ -22,7 +22,7 @@ const RecentBlog = () => {
   return (
     <div className="bg-gray-50 py-12">
       <div className="max-w-screen-xl mx-auto px-4">
-        <h2 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center ">
+        <h2 className="text-xl lg:text-3xl mb-12 font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center ">
           Recent Blogs
         </h2>
         {blogs.length > 0 ? (
