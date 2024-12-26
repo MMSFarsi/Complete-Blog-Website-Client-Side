@@ -14,14 +14,17 @@ const FeaturedBlogs = () => {
     setLoading(true);
     try {
       const { data } = await axios.get("https://assignment-11-server-zeta-liart.vercel.app/blogs");
+
       const sortedBlogs = data
         .map((blog, index) => ({
           id: blog._id,
           serialNumber: index + 1,
           title: blog.title,
           category: blog.category,
+          longDescription: blog.longDescription,
         }))
-        .slice(0, 10); // Only top 10 blogs
+        .sort((a, b) => b.longDescription.length - a.longDescription.length) 
+        .slice(0, 10); 
       setBlogs(sortedBlogs);
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -32,15 +35,15 @@ const FeaturedBlogs = () => {
 
   const columns = [
     {
-      name: "Serial",
+      name: "Post No",
       selector: (row) => row.serialNumber,
-      width: "20%",
-      center: true, 
+      width: "25%",
+      center: true,
     },
     {
       name: "Title",
       selector: (row) => row.title,
-      sortable: true, 
+      sortable: true,
       wrap: true,
     },
     {
@@ -52,10 +55,11 @@ const FeaturedBlogs = () => {
 
   return (
     <div className="max-w-screen-lg mx-auto p-6">
-      <h1 className="text-xl lg:text-3xl font-bold mb-8  text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">Featured Blogs</h1>
+      <h1 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
+        Featured Blogs
+      </h1>
       {blogs.length > 0 ? (
         <DataTable
-        
           columns={columns}
           data={blogs}
           progressPending={loading}

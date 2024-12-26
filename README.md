@@ -1,8 +1,30 @@
-# React + Vite
+# GenIdeas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Purpose
+This is a simple blog website. Users can create an account using Google or manually with an email address. They can read and add posts. Users can comment on others' posts, but the post author cannot comment on their own post. There is also a wishlist feature.
 
-Currently, two official plugins are available:
+## Live Website Link
+https://blog-site-5ef79.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Key Features
+
+- **Fetch Data From Server**: Dynamically fetches and updates blog data from the server.
+- **Add Blog**: Users can add blog post.
+- **Update Blog**: Users can Update blog post.
+- **Comment Features**: Users can comment on others' posts.
+- **Wishlist**: Users can add post on their wishlist.
+- **Authentication**: Secure login and signup with email and Google accounts using Firebase.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices.
+
+
+## NPM Packages I Used
+- **react-router-dom**
+- **axios**
+- **react-intersection-observer**
+- **React Hot-Toast**
+- **react-photo-view**
+- **react-data-table-component**
+- **react-awesome-reveal**
+

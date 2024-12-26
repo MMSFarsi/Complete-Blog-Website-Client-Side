@@ -21,9 +21,10 @@ const SignUp = () => {
       return;
     }
 
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+
     if (!passwordRegex.test(password)) {
-      toast.error("Password must include at least one uppercase letter, one lowercase letter, and one digit.");
+      toast.error("Password must include at least one uppercase letter, one lowercase letter,one special character, and one digit.");
       return;
     }
 
@@ -34,7 +35,7 @@ const SignUp = () => {
           .then(() => {
             setUser(user);
             toast.success("Registration successful.");
-            navigate("/"); // Navigate after successful registration
+            navigate("/"); 
           })
           .catch((error) => {
             toast.error("Failed to update user profile.");
