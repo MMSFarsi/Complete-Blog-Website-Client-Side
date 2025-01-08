@@ -58,6 +58,26 @@ This is a simple blog website. Users can create an account using Google or manua
     "tailwindcss": "^3.4.17",
     "vite": "^6.0.3"
 
+## 1.Installation
+
+Run `npm install` to install project dependencies.
+
+## 2.Environment setup
+
+Create a `.env.local` file and put your environment variable there. Save the following variable:
+
+- VITE_apiKey=
+- VITE_authDomain=
+- VITE_projectId=
+- VITE_storageBucket=
+- VITE_messagingSenderId=
+- VITE_appId=
+
+
+## Usage
+
+Run `npm run dev` to run the project locally.    
+
 ## Relevant Links
 Live Site: https://blog-site-5ef79.web.app/
 Server Site: https://assignment-11-server-zeta-liart.vercel.app/
