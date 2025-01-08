@@ -1,20 +1,16 @@
-# GenIdeas
+# GenIdeas Blog Site
 
 # Purpose
 This is a simple blog website. Users can create an account using Google or manually with an email address. They can read and add posts. Users can comment on others' posts, but the post author cannot comment on their own post. There is also a wishlist feature.
 
 
-# Technologies
+## Technologies
 - React
 - Node Js
 - Express Js
 - MongoDb
 - JWT
 - FireBase
-
-
-
-
 
 
 ## Key Features
@@ -28,14 +24,25 @@ This is a simple blog website. Users can create an account using Google or manua
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices.
 
 
-## NPM Packages I Used
-- **react-router-dom**
-- **axios**
-- **react-intersection-observer**
-- **React Hot-Toast**
-- **react-photo-view**
-- **react-data-table-component**
-- **react-awesome-reveal**
+## Dependencies
+    "@tanstack/react-table": "^8.20.6",
+    "axios": "^1.7.9",
+    "firebase": "^11.1.0",
+    "ka-table": "^11.3.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^8.0.0",
+    "motion": "^11.15.0",
+    "react": "^18.3.1",
+    "react-awesome-reveal": "^4.3.1",
+    "react-data-table-component": "^7.6.2",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.4.0",
+    "react-intersection-observer": "^9.14.0",
+    "react-photo-view": "^1.2.6",
+    "react-router-dom": "^7.1.0",
+    "sort-by": "^1.2.0",
+    "swiper": "^11.1.15"
 
 ## Live Website Link
 https://blog-site-5ef79.web.app/
