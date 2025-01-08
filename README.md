@@ -4,13 +4,13 @@
 This is a simple blog website. Users can create an account using Google or manually with an email address. They can read and add posts. Users can comment on others' posts, but the post author cannot comment on their own post. There is also a wishlist feature.
 
 
-#Technologies:
-- **React
-- **Node Js
-- **Express Js
-- **MongoDb
-- **JWT
-- **FireBase
+##Technologies:
+- React
+- Node Js
+- Express Js
+- MongoDb
+- JWT
+- FireBase
 
 
 
@@ -36,6 +36,6 @@ This is a simple blog website. Users can create an account using Google or manua
 - **react-photo-view**
 - **react-data-table-component**
 - **react-awesome-reveal**
-<hr>
+
 ## Live Website Link
 https://blog-site-5ef79.web.app/
