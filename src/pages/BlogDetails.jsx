@@ -50,7 +50,7 @@ const BlogDetails = () => {
       setCommentText('');
       fetchComments();
     } catch (error) {
-      console.error('Error posting comment:', error);
+      // console.error('Error posting comment:', error);
     }
   };
 
@@ -103,6 +103,7 @@ const BlogDetails = () => {
               ></textarea>
               <button
                 type="submit"
+                disabled={!user}
                 className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
               >
                 Submit Comment

@@ -38,38 +38,45 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-100 hover:scale-105 hover:shadow-sm">
-     
-      <PhotoProvider>
-        <PhotoView src={blog.image}>
-          <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover cursor-pointer" />
-        </PhotoView>
-      </PhotoProvider>
-
-      <div className="p-5">
-        <h3 className="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition">
-          {blog.title}
-        </h3>
-   
-        <span className="inline-block text-sm text-blue-500 bg-blue-50 px-2 py-1 rounded">
-          {blog.category}
-        </span>
-        <div className="mt-4 flex justify-between items-center">
-          <Link
-            to={`/blog/${blog._id}`}
-            className="bg-[#484848] text-white px-6 py-2 rounded-lg hover:border hover:border-[#484848] hover:bg-white hover:text-black  transition duration-900"
-          >
-            Details
-          </Link>
-          <button
-            onClick={handleAddWishlist}
-            className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
-          >
-            Add to Wishlist
-          </button>
-        </div>
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-400 hover:scale-95 hover:shadow-sm">
+    <PhotoProvider>
+      <PhotoView src={blog.image}>
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="w-full h-48 object-cover cursor-pointer"
+        />
+      </PhotoView>
+    </PhotoProvider>
+  
+    <div className="p-5">
+      <h3
+        className="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition"
+        style={{ minHeight: "48px" }} // Ensures a consistent height
+      >
+        {blog.title}
+      </h3>
+  
+      <span className="inline-block text-sm text-blue-500 bg-blue-50 px-2 py-1 rounded">
+        {blog.category}
+      </span>
+      <div className="mt-4 flex justify-between items-center">
+        <Link
+          to={`/blog/${blog._id}`}
+          className="bg-[#484848] text-white px-6 py-2 rounded-lg hover:border hover:border-[#484848] hover:bg-white hover:text-black transition duration-900"
+        >
+          Details
+        </Link>
+        <button
+          onClick={handleAddWishlist}
+          className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
+        >
+          Add to Wishlist
+        </button>
       </div>
     </div>
+  </div>
+  
   );
 };
 

@@ -54,7 +54,7 @@ const FeaturedBlogs = () => {
   ];
 
   return (
-    <div className="max-w-screen-lg mx-auto p-6">
+    <div className="max-w-screen-lg min-h-screen mx-auto p-6">
       <h1 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
         Featured Blogs
       </h1>
@@ -69,7 +69,7 @@ const FeaturedBlogs = () => {
           persistTableHead
         />
       ) : (
-        <p className="text-gray-600">No blogs found.</p>
+        <p className="text-gray-600 text-center">No blogs found.</p>
       )}
     </div>
   );

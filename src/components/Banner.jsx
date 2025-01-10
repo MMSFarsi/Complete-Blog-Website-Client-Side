@@ -13,7 +13,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[500px]">
+    <div className="relative w-full h-[480px]">
       <img
         src="https://i.ibb.co.com/Z8LLh8R/handsome-young-man-shirt-pointing-fingers-left-promo-showing-logo-standing-blue-background.jpg"
         alt="Banner Background"

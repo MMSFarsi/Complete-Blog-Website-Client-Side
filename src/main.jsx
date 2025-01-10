@@ -20,6 +20,8 @@ import PrivateRoute from './PrivateRoutes/PrivateRoute.jsx';
 import UpdateBlog from './pages/UpdateBlog.jsx';
 import Error from './components/Error.jsx';
 import { Toaster } from 'react-hot-toast'
+import MyBlog from './pages/MyBlog.jsx';
+import AboutUs from './pages/AboutUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,15 +54,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog/:id',
-        element: <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
+        element: <BlogDetails></BlogDetails>,
       },
       {
         path:'/features-blog',
         element:<FeaturedBlogs></FeaturedBlogs>
       },
       {
+        path:'/aboutUs',
+        element:<AboutUs></AboutUs>
+      },
+      {
         path:'/add-blog',
         element:<PrivateRoute><AddBlog></AddBlog></PrivateRoute>
+      },
+      {
+        path:'/my-blog',
+        element:<PrivateRoute><MyBlog></MyBlog></PrivateRoute>
       },
       {
         path:'/wishlist',

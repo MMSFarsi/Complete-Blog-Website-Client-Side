@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className=" bg-slate-50 sticky top-0 backdrop-filter backdrop-blur-lg z-30">
+    <header className=" bg-slate-50 sticky top-0 backdrop-filter backdrop-blur-lg z-20">
 
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-3">
@@ -80,18 +80,7 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/add-blog"
-                className={({ isActive }) =>
-                  isActive
-                    ? 'text-blue-400 font-bold underline'
-                    : 'text-black hover:text-blue-400'
-                }
-              >
-                Add Blog
-              </NavLink>
-            </li>
+         
             <li>
               <NavLink
                 to="/all-blog"
@@ -116,16 +105,58 @@ const Navbar = () => {
                 Features Blog
               </NavLink>
             </li>
+           {user?.email &&
             <li>
+            <NavLink
+              to="/add-blog"
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-blue-400 font-bold underline'
+                  : 'text-black hover:text-blue-400'
+              }
+            >
+              Add Blog
+            </NavLink>
+          </li>
+           }
+           {user?.email &&
+            <li>
+            <NavLink
+              to="/my-blog"
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-blue-400 font-bold underline'
+                  : 'text-black hover:text-blue-400'
+              }
+            >
+              My Blog
+            </NavLink>
+          </li>}
+           {
+            user?.email &&
+            <li>
+            <NavLink
+              to="/wishlist"
+              className={({ isActive }) =>
+                isActive
+                  ? 'text-blue-400 font-bold underline'
+                  : 'text-black hover:text-blue-400'
+              }
+            >
+              Wishlist
+            </NavLink>
+          </li>
+           }
+             <li>
               <NavLink
-                to="/wishlist"
+                to="/aboutUs"
                 className={({ isActive }) =>
                   isActive
                     ? 'text-blue-400 font-bold underline'
                     : 'text-black hover:text-blue-400'
                 }
               >
-                Wishlist
+                About Us
               </NavLink>
             </li>
           </ul>
