@@ -22,11 +22,11 @@ const RecentBlog = () => {
   return (
     <div className="bg-gray-50 py-12">
       <div className="max-w-screen-xl mx-auto px-4">
-        <h2 className="text-xl lg:text-3xl mb-12 font-bold  text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center ">
+        <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg ">
           Recent Blogs
         </h2>
         {blogs.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
             {blogs.map((blog) => (
               <BlogCard key={blog._id} blog={blog} />
             ))}

@@ -65,8 +65,8 @@ const Wishlist = () => {
   };
 
   return (
-    <div className=" p-0 min-h-screen lg:p-6">
-      <h2 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
+    <div className=" p-0 min-h-screen  pt-6">
+      <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">
         Wishlist
       </h2>
     {wishlist.length>0?

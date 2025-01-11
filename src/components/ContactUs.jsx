@@ -3,7 +3,7 @@ import React from "react";
 const ContactUs = () => {
   return (
     <div className=" py-10 px-6 md:px-16">
-      <h2 className="text-xl lg:text-2xl font-bold mb-8 rounded-full text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center ">
+      <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg ">
         Contact Us
       </h2>
       <div className="flex flex-col md:flex-row justify-center gap-10">

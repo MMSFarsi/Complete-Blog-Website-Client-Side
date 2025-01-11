@@ -9,13 +9,12 @@ import RecentBlog from '../components/RecentBlog'
 const Home = () => {
   return (
     <div>
-      <Banner></Banner>
+        <Banner></Banner>
+        <PopularBlogs></PopularBlogs>
         <RecentBlog></RecentBlog>
         <Newsletter></Newsletter>
-        <PopularBlogs></PopularBlogs>
- 
-        <JoinWithUs></JoinWithUs>
         <Faq></Faq>
+        <JoinWithUs></JoinWithUs>
         <ContactUs></ContactUs>
        
     </div>

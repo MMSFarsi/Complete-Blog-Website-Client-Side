@@ -55,7 +55,7 @@ const FeaturedBlogs = () => {
 
   return (
     <div className="max-w-screen-lg min-h-screen mx-auto p-6">
-      <h1 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
+      <h1 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">
         Featured Blogs
       </h1>
       {blogs.length > 0 ? (

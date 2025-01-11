@@ -49,10 +49,10 @@ const BlogCard = ({ blog }) => {
       </PhotoView>
     </PhotoProvider>
   
-    <div className="p-5">
+    <div className="p-3">
       <h3
-        className="text-lg font-bold text-gray-800 mb-2 hover:text-blue-600 transition"
-        style={{ minHeight: "48px" }} // Ensures a consistent height
+        className="text-sm font-bold text-gray-800 mb-2 hover:text-blue-600 transition"
+        style={{ minHeight: "60px" }}
       >
         {blog.title}
       </h3>
@@ -60,16 +60,16 @@ const BlogCard = ({ blog }) => {
       <span className="inline-block text-sm text-blue-500 bg-blue-50 px-2 py-1 rounded">
         {blog.category}
       </span>
-      <div className="mt-4 flex justify-between items-center">
+      <div className="mt-2 flex justify-between items-center">
         <Link
           to={`/blog/${blog._id}`}
-          className="bg-[#484848] text-white px-6 py-2 rounded-lg hover:border hover:border-[#484848] hover:bg-white hover:text-black transition duration-900"
+          className="bg-[#484848] text-sm text-white px-3 py-1 rounded-lg hover:border hover:border-[#484848] hover:bg-white hover:text-black transition duration-900"
         >
           Details
         </Link>
         <button
           onClick={handleAddWishlist}
-          className="px-6 py-2 rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
+          className="px-3 py-1 text-sm rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
         >
           Add to Wishlist
         </button>

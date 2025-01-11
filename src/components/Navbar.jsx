@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center space-x-3">
           <img
             src="https://i.ibb.co.com/R39RgW7/logoimage.png"
-            className=" h-10  object-cover"
+            className="h-5 lg:h-10   object-cover"
             alt="Logo"
           />
 
@@ -66,8 +66,8 @@ const Navbar = () => {
 
 
       <nav className="">
-        <div className="max-w-screen-xl mx-auto px-4 py-3">
-          <ul className="flex space-x-4 lg:space-x-8  text-[11px] lg:text-sm ">
+        <div className="max-w-screen-xl mx-auto px-2 py-1">
+          <ul className="flex space-x-4 lg:space-x-8  text-[9px] lg:text-sm ">
             <li>
               <NavLink
                 to="/"

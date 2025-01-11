@@ -5,8 +5,10 @@ import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 
+
 export const AuthContext= createContext(null)
 export const provider = new GoogleAuthProvider();
+
 
 const AuthProvider = ({children}) => {
     const [user,setUser]=useState(null)
@@ -65,6 +67,7 @@ const AuthProvider = ({children}) => {
       
   return (
     <AuthContext.Provider value={userInfo}>
+ 
         {children}
     </AuthContext.Provider>
   )

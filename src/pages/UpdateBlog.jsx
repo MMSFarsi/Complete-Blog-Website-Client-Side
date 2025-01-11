@@ -40,7 +40,7 @@ const UpdateBlog = () => {
   return (
     <div className="min-h-screen mx-2 lg:mx-0 flex items-center justify-center bg-cover bg-center my-6">
       <div className="bg-white/20 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-2xl border border-gray-200">
-        <h2 className="text-xl lg:text-3xl font-bold mb-8  text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
+        <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">
           Update Post
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">

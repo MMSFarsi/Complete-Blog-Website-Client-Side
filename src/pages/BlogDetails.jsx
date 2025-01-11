@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../provider/AuthProvider';
+import toast from 'react-hot-toast';
+
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -37,6 +39,14 @@ const BlogDetails = () => {
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
+    if (!user) {
+      toast.error('You need to be logged in to add to the Comment')
+       return;
+     }
+     if (commentText.length<=0) {
+      toast.error('Write any text to comment')
+       return;
+     }
 
     const commentData = {
       blogId: id,
@@ -49,6 +59,7 @@ const BlogDetails = () => {
       await axios.post('https://assignment-11-server-zeta-liart.vercel.app/comments', commentData);
       setCommentText('');
       fetchComments();
+      toast.success('Comment Submitted')
     } catch (error) {
       // console.error('Error posting comment:', error);
     }
@@ -97,13 +108,17 @@ const BlogDetails = () => {
               <textarea
                 value={commentText}
                 onChange={(e) => setCommentText(e.target.value)}
-                placeholder="Write a comment..."
+                placeholder={
+                  user
+                    ? `Comment as ${user?.displayName}`
+                    : "You have to log in first to add a comment"
+                }
                 className="w-full border border-gray-300 rounded-lg p-3"
                 rows="4"
               ></textarea>
               <button
                 type="submit"
-                disabled={!user}
+               
                 className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
               >
                 Submit Comment

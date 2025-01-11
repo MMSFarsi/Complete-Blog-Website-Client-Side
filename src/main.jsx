@@ -22,11 +22,17 @@ import Error from './components/Error.jsx';
 import { Toaster } from 'react-hot-toast'
 import MyBlog from './pages/MyBlog.jsx';
 import AboutUs from './pages/AboutUs.jsx';
+import ScrollTop from './components/ScrollTop.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: (
+      <>
+        <ScrollTop /> 
+        <MainLayout />
+      </>
+    ),
     children:[
       {
         path:'/',

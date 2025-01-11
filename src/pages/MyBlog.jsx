@@ -65,8 +65,8 @@ const MyBlog = () => {
 
     
   return (
-    <div className=" p-0 min-h-screen lg:p-6">
-      <h2 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
+    <div className=" p-0 min-h-screen pt-6 px-3">
+      <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">
         My Posted Blog
       </h2>
     {blog.length>0?

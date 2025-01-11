@@ -20,7 +20,7 @@ const AllBlog = () => {
 
   return (
     <div className="max-w-screen-xl min-h-screen mx-auto p-6">
-      <h2 className="tex-xl lg:text-3xl font-bold mb-6 bg-[#484848] w-fit mx-auto text-white px-4 py-3">All Blogs</h2>
+      <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">All Blogs</h2>
       <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
           <div>
             <select
@@ -29,7 +29,7 @@ const AllBlog = () => {
               className='border p-2 lg:p-4 rounded-lg'
               onChange={(e)=>setFilter(e.target.value)}
             >
-              <option value=''>Filter By Category</option>
+              <option value=''>All Blogs</option>
               <option value='Technology'>Technology</option>
               <option value='Lifestyle'>Lifestyle</option>
               <option value='Science'>Science</option>
@@ -56,7 +56,7 @@ const AllBlog = () => {
        
        
         </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
         {blogs.length > 0 ? (
           blogs.map((blog) => <BlogCard    key={blog.id} blog={blog}></BlogCard> )
         ) : (

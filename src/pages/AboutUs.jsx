@@ -2,9 +2,9 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className=" py-12">
-      <div className="max-w-screen-lg mx-auto px-6 lg:px-0">
-      <h1 className="text-xl lg:text-3xl font-bold mb-8 text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center">
+    <div className=" ">
+      <div className="  min-h-screen pt-6 px-3 lg:px-20">
+      <h1 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">
         About Us
       </h1>
         
