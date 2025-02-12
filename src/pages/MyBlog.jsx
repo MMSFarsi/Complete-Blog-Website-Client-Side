@@ -66,12 +66,10 @@ const MyBlog = () => {
     
   return (
     <div className=" p-0 min-h-screen pt-6 px-3">
-      <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">
-        My Posted Blog
-      </h2>
+      <h2 className="text-xl lg:text-3xl mb-12 font-bold text-white bg-[#484848] w-fit mx-auto px-4 py-3 text-center rounded-tl-lg rounded-br-lg">My Posted Blog</h2>
     {blog.length>0?
       <div className="w-full p-2 lg:px-0">
-      <table className="w-full bg-white border border-gray-200 rounded-lg shadow-md text-sm md:text-base">
+      <table className="w-full bg-white border border-gray-200 rounded-lg  text-sm md:text-base">
         <thead>
           <tr className="bg-gray-200 text-gray-700">
             <th className="px-4 py-3 text-left">Title</th>

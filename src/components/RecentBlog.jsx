@@ -10,7 +10,7 @@ const RecentBlog = () => {
       try {
         const { data } = await axios.get('https://assignment-11-server-zeta-liart.vercel.app/blogs'); 
         const sortedBlogs = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-        const latestBlogs = sortedBlogs.slice(0, 6);
+        const latestBlogs = sortedBlogs.slice(0, 8);
         setBlogs(latestBlogs);
       } catch (error) {
         console.error('Error fetching recent blogs:', error);

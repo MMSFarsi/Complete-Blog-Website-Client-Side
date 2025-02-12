@@ -10,13 +10,13 @@ const PopularBlogs = () => {
       try {
         const { data } = await axios.get('https://assignment-11-server-zeta-liart.vercel.app/blogs'); 
         const sortedBlogs = data.sort((a, b) => b.longDescription.length - a.longDescription.length);
-        const topBlogs = sortedBlogs.slice(0, 6);
+        const topBlogs = sortedBlogs.slice(0, 8);
         setBlogs(topBlogs);
       } catch (error) {
-        console.error('Error fetching popular blogs:', error);
+        // console.error('Error fetching popular blogs:', error);
       }
     };
-    fetchBlogs();
+    fetchBlogs()
   }, []);
 
   return (
