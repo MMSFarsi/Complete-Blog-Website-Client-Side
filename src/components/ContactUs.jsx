@@ -18,24 +18,21 @@ const ContactUs = () => {
           </p>
           <ul className="text-gray-700 space-y-2">
             <li>
-              <strong>Email:</strong>{" "}
-            
-                mir.blooger@yahoo.com
+              <strong>Email </strong> mirsalmanfarsi@gmail.com
           
             </li>
             <li>
-              <strong>Phone:</strong> +880 783 4782
+              <strong>Phone:</strong> +880 1619547037
             </li>
             <li>
-              <strong>Address:</strong> Bohoddarhat, Chittagong,Bangladesh
+              <strong>Address:</strong> Chittagong,Bangladesh
             </li>
           </ul>
         </div>
 
     
         <div className="flex-1 bg-white border border-[#484848] p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            Send a Message
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Send a Message
           </h3>
           <form className="space-y-4">
             <div>
