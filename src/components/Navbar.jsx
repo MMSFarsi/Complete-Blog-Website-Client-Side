@@ -31,35 +31,22 @@ const Navbar = () => {
         <div className="flex items-center space-x-3 lg:space-x-6">
           {user ? (
             <>
-              <img
-                src={user.photoURL || 'https://via.placeholder.com/40'}
-                alt="User Avatar"
-                className="lg:w-10 lg:h-10 w-7 h-7 rounded-full border-2 border-white"
-                referrerPolicy="no-referrer"
-              />
+              <img src={user.photoURL || 'https://via.placeholder.com/40'}   alt="User Avatar"
+                className="lg:w-10 lg:h-10 w-7 h-7 rounded-full border-2 border-white"  referrerPolicy="no-referrer"/>
               <button
                 onClick={handleLogOut}
                 className="px-1 py-1  :px-6 lg:py-2 rounded-lg text-[10px] lg:text-sm bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-red-500 hover:text-black transition-all duration-300"
-              >
-                Logout
-              </button>
+              >  Logout</button>
             </>
           ) : (
             <>
-              <Link
-                to="/login"
+              <Link to="/login"
                 className="px-1 py-1  :px-6 lg:py-2 text-[10px] lg:text-sm rounded-lg bg-[#484848] border border-black/50 text-white font-semibold backdrop-blur-md shadow-md hover:bg-white/50 hover:text-black transition-all duration-300"
-              >
-                Login
-              </Link>
-              <Link
-                to="/sign-up"
+              >  Login </Link>
+              <Link to="/sign-up"
                 className="px-1 py-1  :px-6 lg:py-2 text-[10px] lg:text-sm rounded-lg bg-white/30 border border-black/50 text-black font-semibold backdrop-blur-md shadow-md hover:bg-[#484848] hover:text-white transition-all duration-300"
-              >
-                Register
-              </Link>
-
-            </>
+              > Register</Link>    
+              </>
           )}
         </div>
       </div>
